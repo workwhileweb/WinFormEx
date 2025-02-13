@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 
 using AdamsLair.WinForms.Drawing;
+using AdamsLair.WinForms.TimelineControls.EventArgs;
+using AdamsLair.WinForms.TimelineControls.Models;
 
 namespace AdamsLair.WinForms.TimelineControls
 {

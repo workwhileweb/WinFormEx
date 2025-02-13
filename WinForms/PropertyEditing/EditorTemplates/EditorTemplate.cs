@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 using System.Drawing;
-
+using System.Windows.Forms;
 using AdamsLair.WinForms.Drawing;
 
-namespace AdamsLair.WinForms.PropertyEditing.Templates
+namespace AdamsLair.WinForms.PropertyEditing.EditorTemplates
 {
 	public abstract class EditorTemplate
 	{

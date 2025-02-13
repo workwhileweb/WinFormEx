@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using AdamsLair.WinForms.Internal;
 
 namespace AdamsLair.WinForms.ColorControls
 {

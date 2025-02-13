@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 
 using AdamsLair.WinForms.Drawing;
+using AdamsLair.WinForms.Internal;
 
 namespace AdamsLair.WinForms.PropertyEditing
 {

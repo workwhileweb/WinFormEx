@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+﻿using AdamsLair.WinForms.TimelineControls.Models;
 
-using AdamsLair.WinForms.Drawing;
-
-namespace AdamsLair.WinForms.TimelineControls
+namespace AdamsLair.WinForms.TimelineControls.EventArgs
 {
-	public class TimelineTrackModelEventArgs : EventArgs
+	public class TimelineTrackModelEventArgs : System.EventArgs
 	{
 		private ITimelineTrackModel model = null;
 		public ITimelineTrackModel Model

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
-
+using AdamsLair.WinForms.Internal;
 using AdamsLair.WinForms.Properties;
 
 namespace AdamsLair.WinForms.Drawing

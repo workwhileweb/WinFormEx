@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace AdamsLair.WinForms.TimelineControls
+namespace AdamsLair.WinForms.TimelineControls.Models
 {
 	public abstract class TimelineTrackModel : ITimelineTrackModel
 	{
@@ -18,7 +15,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				{
 					this.trackName = value;
 					if (this.TrackNameChanged != null)
-						this.TrackNameChanged(this, EventArgs.Empty);
+						this.TrackNameChanged(this, System.EventArgs.Empty);
 				}
 			}
 		}

@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace AdamsLair.WinForms.ItemViews
+﻿namespace AdamsLair.WinForms.ItemViews.EventArgs
 {
-	public class TiledViewEventArgs : EventArgs
+	public class TiledViewEventArgs : System.EventArgs
 	{
 		private TiledView view;
 		public TiledView View

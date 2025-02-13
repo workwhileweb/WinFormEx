@@ -5,6 +5,7 @@ using System.Drawing.Drawing2D;
 using System.ComponentModel;
 
 using AdamsLair.WinForms.Drawing;
+using AdamsLair.WinForms.Internal;
 
 namespace AdamsLair.WinForms.ColorControls
 {

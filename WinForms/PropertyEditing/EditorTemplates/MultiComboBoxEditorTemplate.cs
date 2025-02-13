@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Drawing;
-
-using AdamsLair.WinForms.Drawing;
 using ButtonState = AdamsLair.WinForms.Drawing.ButtonState;
 
-namespace AdamsLair.WinForms.PropertyEditing.Templates
+namespace AdamsLair.WinForms.PropertyEditing.EditorTemplates
 {
 	public class MultiComboBoxEditorTemplate : EditorTemplate, IPopupControlHost
 	{

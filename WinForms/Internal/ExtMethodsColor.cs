@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Drawing;
 
-namespace AdamsLair.WinForms
+namespace AdamsLair.WinForms.Internal
 {
 	internal static class ExtMethodsColor
 	{

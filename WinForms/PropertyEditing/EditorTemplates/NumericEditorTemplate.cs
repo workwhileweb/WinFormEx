@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Windows.Forms;
 using System.Drawing;
 using System.Globalization;
-
+using System.Windows.Forms;
 using AdamsLair.WinForms.Drawing;
+using AdamsLair.WinForms.Internal;
 using AdamsLair.WinForms.Properties;
 using ButtonState = AdamsLair.WinForms.Drawing.ButtonState;
 
-namespace AdamsLair.WinForms.PropertyEditing.Templates
+namespace AdamsLair.WinForms.PropertyEditing.EditorTemplates
 {
 	public class NumericEditorTemplate : EditorTemplate
 	{

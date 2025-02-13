@@ -11,7 +11,9 @@ using AdamsLair.WinForms.ColorControls;
 using AdamsLair.WinForms.PropertyEditing;
 using AdamsLair.WinForms.ItemModels;
 using AdamsLair.WinForms.ItemViews;
+using AdamsLair.WinForms.ItemViews.EventArgs;
 using AdamsLair.WinForms.TimelineControls;
+using AdamsLair.WinForms.TimelineControls.Models;
 
 namespace AdamsLair.WinForms.TestApp
 {

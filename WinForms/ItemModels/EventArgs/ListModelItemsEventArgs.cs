@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace AdamsLair.WinForms.ItemModels
+namespace AdamsLair.WinForms.ItemModels.EventArgs
 {
-	public class ListModelItemsEventArgs : EventArgs
+	public class ListModelItemsEventArgs : System.EventArgs
 	{
 		private int index;
 		private int count;

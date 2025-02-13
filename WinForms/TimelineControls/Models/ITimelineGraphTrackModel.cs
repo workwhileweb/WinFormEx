@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using AdamsLair.WinForms.TimelineControls.EventArgs;
 
-namespace AdamsLair.WinForms.TimelineControls
+namespace AdamsLair.WinForms.TimelineControls.Models
 {
 	public interface ITimelineGraphTrackModel : ITimelineTrackModel
 	{

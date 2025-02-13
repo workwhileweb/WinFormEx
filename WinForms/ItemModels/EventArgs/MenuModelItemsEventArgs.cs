@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace AdamsLair.WinForms.ItemModels
+namespace AdamsLair.WinForms.ItemModels.EventArgs
 {
-	public class MenuModelItemsEventArgs : EventArgs
+	public class MenuModelItemsEventArgs : System.EventArgs
 	{
 		private IMenuModelItem[]	items			= null;
 		private bool				sortingAffected	= false;

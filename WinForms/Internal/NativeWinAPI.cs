@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
 
-namespace AdamsLair.WinForms.NativeWinAPI
+namespace AdamsLair.WinForms.Internal
 {
 	public enum WindowMessage : int
 	{

@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Drawing;
+﻿using AdamsLair.WinForms.TimelineControls.Models;
 
-using AdamsLair.WinForms.Drawing;
-
-namespace AdamsLair.WinForms.TimelineControls
+namespace AdamsLair.WinForms.TimelineControls.EventArgs
 {
-	public class TimelineGraphEventArgs : EventArgs
+	public class TimelineGraphEventArgs : System.EventArgs
 	{
 		private ITimelineGraphModel graph;
 		public ITimelineGraphModel Graph

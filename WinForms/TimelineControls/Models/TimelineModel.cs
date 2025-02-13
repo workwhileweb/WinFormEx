@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
+using AdamsLair.WinForms.TimelineControls.EventArgs;
 
-namespace AdamsLair.WinForms.TimelineControls
+namespace AdamsLair.WinForms.TimelineControls.Models
 {
 	public class TimelineModel : ITimelineModel
 	{
@@ -12,7 +12,7 @@ namespace AdamsLair.WinForms.TimelineControls
 		private	float	unitBaseScale		= 1.0f;
 		private	List<ITimelineTrackModel>	trackList	= new List<ITimelineTrackModel>();
 
-		public event EventHandler<EventArgs> UnitChanged;
+		public event EventHandler<System.EventArgs> UnitChanged;
 		public event EventHandler<TimelineTrackModelCollectionEventArgs> TracksAdded;
 		public event EventHandler<TimelineTrackModelCollectionEventArgs> TracksRemoved;
 
@@ -25,7 +25,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				{
 					this.unitName = value;
 					if (this.UnitChanged != null)
-						this.UnitChanged(this, EventArgs.Empty);
+						this.UnitChanged(this, System.EventArgs.Empty);
 				}
 			}
 		}
@@ -38,7 +38,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				{
 					this.unitDescription = value;
 					if (this.UnitChanged != null)
-						this.UnitChanged(this, EventArgs.Empty);
+						this.UnitChanged(this, System.EventArgs.Empty);
 				}
 			}
 		}
@@ -51,7 +51,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				{
 					this.unitBaseScale = value;
 					if (this.UnitChanged != null)
-						this.UnitChanged(this, EventArgs.Empty);
+						this.UnitChanged(this, System.EventArgs.Empty);
 				}
 			}
 		}

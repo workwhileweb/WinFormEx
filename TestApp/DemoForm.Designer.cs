@@ -1,4 +1,7 @@
-﻿namespace AdamsLair.WinForms.TestApp
+﻿using AdamsLair.WinForms.ItemViews.EventArgs;
+using AdamsLair.WinForms.TimelineControls.Models;
+
+namespace AdamsLair.WinForms.TestApp
 {
 	partial class DemoForm
 	{
@@ -30,7 +33,7 @@
 		{
 			AdamsLair.WinForms.ItemModels.ListModel<object> listModel_11 = new AdamsLair.WinForms.ItemModels.ListModel<object>();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DemoForm));
-			AdamsLair.WinForms.TimelineControls.TimelineModel timelineModel1 = new AdamsLair.WinForms.TimelineControls.TimelineModel();
+			TimelineModel timelineModel1 = new TimelineModel();
 			this.radioEnabled = new System.Windows.Forms.RadioButton();
 			this.radioDisabled = new System.Windows.Forms.RadioButton();
 			this.radioReadOnly = new System.Windows.Forms.RadioButton();
@@ -454,9 +457,9 @@
 			this.tiledView.Size = new System.Drawing.Size(334, 363);
 			this.tiledView.TabIndex = 0;
 			this.tiledView.TabStop = true;
-			this.tiledView.ItemClicked += new System.EventHandler<AdamsLair.WinForms.ItemViews.TiledViewItemMouseEventArgs>(this.tiledView_ItemClicked);
-			this.tiledView.ItemDoubleClicked += new System.EventHandler<AdamsLair.WinForms.ItemViews.TiledViewItemMouseEventArgs>(this.tiledView_ItemDoubleClicked);
-			this.tiledView.ItemDrag += new System.EventHandler<AdamsLair.WinForms.ItemViews.TiledViewItemMouseEventArgs>(this.tiledView_ItemDrag);
+			this.tiledView.ItemClicked += new System.EventHandler<TiledViewItemMouseEventArgs>(this.tiledView_ItemClicked);
+			this.tiledView.ItemDoubleClicked += new System.EventHandler<TiledViewItemMouseEventArgs>(this.tiledView_ItemDoubleClicked);
+			this.tiledView.ItemDrag += new System.EventHandler<TiledViewItemMouseEventArgs>(this.tiledView_ItemDrag);
 			// 
 			// tabPageColorControls
 			// 

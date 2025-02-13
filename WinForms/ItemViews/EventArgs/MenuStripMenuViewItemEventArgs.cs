@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
-
+﻿using System.Windows.Forms;
 using AdamsLair.WinForms.ItemModels;
 
-namespace AdamsLair.WinForms.ItemViews
+namespace AdamsLair.WinForms.ItemViews.EventArgs
 {
 	public class MenuStripMenuViewItemEventArgs : MenuStripMenuViewEventArgs
 	{

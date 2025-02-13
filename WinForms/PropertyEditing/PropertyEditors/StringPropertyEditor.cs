@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
-using System.Drawing;
+using AdamsLair.WinForms.PropertyEditing.EditorTemplates;
 
-using AdamsLair.WinForms.Drawing;
-using AdamsLair.WinForms.PropertyEditing.Templates;
-
-namespace AdamsLair.WinForms.PropertyEditing.Editors
+namespace AdamsLair.WinForms.PropertyEditing.PropertyEditors
 {
 	public class StringPropertyEditor : PropertyEditor
 	{

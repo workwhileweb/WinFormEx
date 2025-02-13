@@ -6,6 +6,8 @@ using System.Windows.Forms;
 using System.Drawing;
 
 using AdamsLair.WinForms.ItemModels;
+using AdamsLair.WinForms.ItemModels.EventArgs;
+using AdamsLair.WinForms.ItemViews.EventArgs;
 
 namespace AdamsLair.WinForms.ItemViews
 {

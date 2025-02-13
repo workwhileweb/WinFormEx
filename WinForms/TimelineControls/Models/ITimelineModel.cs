@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using AdamsLair.WinForms.TimelineControls.EventArgs;
 
-namespace AdamsLair.WinForms.TimelineControls
+namespace AdamsLair.WinForms.TimelineControls.Models
 {
 	public interface ITimelineModel
 	{
@@ -12,7 +11,7 @@ namespace AdamsLair.WinForms.TimelineControls
 		float UnitBaseScale { get; }
 		IEnumerable<ITimelineTrackModel> Tracks { get; }
 
-		event EventHandler<EventArgs> UnitChanged; 
+		event EventHandler<System.EventArgs> UnitChanged; 
 		event EventHandler<TimelineTrackModelCollectionEventArgs> TracksAdded;
 		event EventHandler<TimelineTrackModelCollectionEventArgs> TracksRemoved;
 	}

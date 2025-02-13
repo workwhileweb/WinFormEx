@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 
-using AdamsLair.WinForms.NativeWinAPI;
-
-namespace AdamsLair.WinForms
+namespace AdamsLair.WinForms.Internal
 {
 	internal static class ExtMethodsMessage
 	{

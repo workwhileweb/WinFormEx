@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Drawing;
 using System.Windows.Forms;
+using AdamsLair.WinForms.TimelineControls.EventArgs;
+using AdamsLair.WinForms.TimelineControls.Models;
 
 namespace AdamsLair.WinForms.TimelineControls
 {

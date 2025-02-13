@@ -75,9 +75,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\WinForms\AdamsLair.WinForms.csproj">
+    <ProjectReference Include="..\WinForms\WinForms.csproj">
       <Project>{44E2FD11-C687-41ED-B72F-1A4C92479EDC}</Project>
-      <Name>AdamsLair.WinForms %28AdamsLair.WinForms\AdamsLair.WinForms%29</Name>
+      <Name>WinForms</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

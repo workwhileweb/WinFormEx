@@ -7,6 +7,9 @@ using System.Text;
 using System.Windows.Forms;
 
 using AdamsLair.WinForms.Drawing;
+using AdamsLair.WinForms.Internal;
+using AdamsLair.WinForms.TimelineControls.EventArgs;
+using AdamsLair.WinForms.TimelineControls.Models;
 
 namespace AdamsLair.WinForms.TimelineControls
 {
