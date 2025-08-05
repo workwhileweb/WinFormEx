@@ -480,12 +480,12 @@ namespace AdamsLair.WinForms.TimelineControls
 			base.OnMouseMove(e);
 			this.UpdateMouseoverState();
 		}
-		protected internal override void OnMouseEnter(EventArgs e)
+		protected internal override void OnMouseEnter(System.EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			this.UpdateMouseoverState();
 		}
-		protected internal override void OnMouseLeave(EventArgs e)
+		protected internal override void OnMouseLeave(System.EventArgs e)
 		{
 			base.OnMouseLeave(e);
 			this.UpdateMouseoverState();

@@ -233,7 +233,8 @@ namespace AdamsLair.WinForms.PropertyEditing
 		{
 			get { return this.selectedObjects; }
 		}
-		public bool ReadOnly
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool ReadOnly
 		{
 			get { return this.readOnly; }
 			set
@@ -245,7 +246,8 @@ namespace AdamsLair.WinForms.PropertyEditing
 				}
 			}
 		}
-		public bool ShowNonPublic
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool ShowNonPublic
 		{
 			get { return this.showNonPublic; }
 			set
@@ -276,7 +278,8 @@ namespace AdamsLair.WinForms.PropertyEditing
 		{
 			get { return this.renderer; }
 		}
-		public float SplitterRatio
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public float SplitterRatio
 		{
 			get { return this.splitterRatio; }
 			set
@@ -286,12 +289,14 @@ namespace AdamsLair.WinForms.PropertyEditing
 				this.Invalidate();
 			}
 		}
-		public int SplitterPosition
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public int SplitterPosition
 		{
 			get { return (int)Math.Round(this.SplitterRatio * this.Width); }
 			set { this.SplitterRatio = (float)value / (float)this.Width; }
 		}
-		public bool SortEditorsByName
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool SortEditorsByName
 		{
 			get { return this.sortEditorsByName; }
 			set

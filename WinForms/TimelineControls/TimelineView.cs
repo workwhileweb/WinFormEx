@@ -100,8 +100,8 @@ namespace AdamsLair.WinForms.TimelineControls
 		public event EventHandler UnitChanged = null;
 		public event EventHandler ViewScrolled = null;
 
-		
-		public ITimelineModel Model
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public ITimelineModel Model
 		{
 			get { return this.model; }
 			set
@@ -119,7 +119,7 @@ namespace AdamsLair.WinForms.TimelineControls
 
 					this.model = value ?? new TimelineModel();
 					
-					this.OnUnitChanged(EventArgs.Empty);
+					this.OnUnitChanged(System.EventArgs.Empty);
 					if (this.model.Tracks.Any())
 					{
 						this.OnModelTracksAdded(new TimelineTrackModelCollectionEventArgs(this.model.Tracks));
@@ -152,7 +152,7 @@ namespace AdamsLair.WinForms.TimelineControls
 			set
 			{
 				this.AutoScrollPosition = new Point(-(int)this.ConvertUnitsToPixels(value), -this.AutoScrollPosition.Y);
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 		}
 		[DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
@@ -230,10 +230,11 @@ namespace AdamsLair.WinForms.TimelineControls
 			get { return this.areaRightSidebar.DesiredSize; }
 			set { this.areaRightSidebar.DesiredSize = value; this.UpdateGeometry(); }
 		}
-		/// <summary>
-		/// [GET / SET] If true, the TimelineView will automatically adjust its drawing quality while scrolling and resizing in order to achieve maximum performance.
-		/// </summary>
-		public bool AdaptiveDrawingQuality
+        /// <summary>
+        /// [GET / SET] If true, the TimelineView will automatically adjust its drawing quality while scrolling and resizing in order to achieve maximum performance.
+        /// </summary>
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool AdaptiveDrawingQuality
 		{
 			get { return this.adaptiveQuality; }
 			set { this.adaptiveQuality = value; }
@@ -264,7 +265,8 @@ namespace AdamsLair.WinForms.TimelineControls
 		{
 			get { return this.mouseAction; }
 		}
-		public float SelectionBeginTime
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public float SelectionBeginTime
 		{
 			get { return Math.Min(this.selectionTimeA, this.selectionTimeB); }
 			set
@@ -280,7 +282,8 @@ namespace AdamsLair.WinForms.TimelineControls
 				this.RaiseSelectionChanged(lastBegin, lastEnd);
 			}
 		}
-		public float SelectionEndTime
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public float SelectionEndTime
 		{
 			get { return Math.Max(this.selectionTimeA, this.selectionTimeB); }
 			set
@@ -520,7 +523,7 @@ namespace AdamsLair.WinForms.TimelineControls
 			this.UpdateContentWidth();
 
 			if (this.UnitZoomChanged != null)
-				this.UnitZoomChanged(this, EventArgs.Empty);
+				this.UnitZoomChanged(this, System.EventArgs.Empty);
 
 			this.InvalidateLowQuality();
 		}
@@ -671,11 +674,11 @@ namespace AdamsLair.WinForms.TimelineControls
 			{
 				if (oldHoverTrack != null)
 				{
-					oldHoverTrack.OnMouseLeave(EventArgs.Empty);
+					oldHoverTrack.OnMouseLeave(System.EventArgs.Empty);
 				}
 				if (this.mouseoverTrack != null)
 				{
-					this.mouseoverTrack.OnMouseEnter(EventArgs.Empty);
+					this.mouseoverTrack.OnMouseEnter(System.EventArgs.Empty);
 				}
 			}
 			if (this.mouseoverTrack != null)
@@ -697,7 +700,7 @@ namespace AdamsLair.WinForms.TimelineControls
 			}
 		}
 
-		protected virtual void OnUnitChanged(EventArgs e)
+		protected virtual void OnUnitChanged(System.EventArgs e)
 		{
 			this.Invalidate();
 			this.UpdateContentWidth();
@@ -718,8 +721,8 @@ namespace AdamsLair.WinForms.TimelineControls
 				track.ContentWidthChanged	-= this.track_ContentWidthChanged;
 				this.trackList.Remove(track);
 			}
-			this.OnContentWidthChanged(EventArgs.Empty);
-			this.OnContentHeightChanged(EventArgs.Empty);
+			this.OnContentWidthChanged(System.EventArgs.Empty);
+			this.OnContentHeightChanged(System.EventArgs.Empty);
 		}
 		protected virtual void OnModelTracksAdded(TimelineTrackModelCollectionEventArgs e)
 		{
@@ -764,35 +767,35 @@ namespace AdamsLair.WinForms.TimelineControls
 				track.ParentView = this;
 			}
 
-			this.OnContentWidthChanged(EventArgs.Empty);
-			this.OnContentHeightChanged(EventArgs.Empty);
+			this.OnContentWidthChanged(System.EventArgs.Empty);
+			this.OnContentHeightChanged(System.EventArgs.Empty);
 		}
-		protected override void OnForeColorChanged(EventArgs e)
+		protected override void OnForeColorChanged(System.EventArgs e)
 		{
 			base.OnForeColorChanged(e);
 			this.renderer.ColorText = this.ForeColor;
 		}
-		protected override void OnBackColorChanged(EventArgs e)
+		protected override void OnBackColorChanged(System.EventArgs e)
 		{
 			base.OnBackColorChanged(e);
 			this.renderer.ColorBackground = this.BackColor;
 		}
-		protected override void OnFontChanged(EventArgs e)
+		protected override void OnFontChanged(System.EventArgs e)
 		{
 			base.OnFontChanged(e);
 			this.renderer.FontRegular = this.Font;
 		}
-		protected virtual void OnContentHeightChanged(EventArgs e)
+		protected virtual void OnContentHeightChanged(System.EventArgs e)
 		{
 			this.UpdateContentHeight();
 			this.Invalidate();
 		}
-		protected virtual void OnContentWidthChanged(EventArgs e)
+		protected virtual void OnContentWidthChanged(System.EventArgs e)
 		{
 			this.UpdateContentWidth();
 		}
 
-		protected virtual void OnViewScrolled(EventArgs e)
+		protected virtual void OnViewScrolled(System.EventArgs e)
 		{
 			if (this.ViewScrolled != null)
 				this.ViewScrolled(this, e);
@@ -806,9 +809,9 @@ namespace AdamsLair.WinForms.TimelineControls
 			{
 				this.fitZoom = false;
 			}
-			this.OnViewScrolled(EventArgs.Empty);
+			this.OnViewScrolled(System.EventArgs.Empty);
 		}
-		protected override void OnResize(EventArgs eventargs)
+		protected override void OnResize(System.EventArgs eventargs)
 		{
 			base.OnResize(eventargs);
 			this.UpdateGeometry();
@@ -822,7 +825,7 @@ namespace AdamsLair.WinForms.TimelineControls
 			if (keyData == Keys.Left || keyData == Keys.Right || keyData == Keys.Up || keyData == Keys.Down) return true;
 			return base.IsInputKey(keyData);
 		}
-		protected override void OnClick(EventArgs e)
+		protected override void OnClick(System.EventArgs e)
 		{
 			base.OnClick(e);
 			this.Focus();
@@ -842,25 +845,25 @@ namespace AdamsLair.WinForms.TimelineControls
 			{
 				this.UnitScroll += this.ConvertPixelsToUnits(this.rectContentArea.Width) / 50.0f;
 				this.InvalidateLowQuality();
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 			else if (e.KeyCode == Keys.Right)
 			{
 				this.UnitScroll -= this.ConvertPixelsToUnits(this.rectContentArea.Width) / 50.0f;
 				this.InvalidateLowQuality();
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 			else if (e.KeyCode == Keys.Up)
 			{
 				this.AutoScrollPosition = new Point(-this.AutoScrollPosition.X, -this.AutoScrollPosition.Y - this.ClientSize.Height / 50);
 				this.InvalidateLowQuality();
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 			else if (e.KeyCode == Keys.Down)
 			{
 				this.AutoScrollPosition = new Point(-this.AutoScrollPosition.X, -this.AutoScrollPosition.Y + this.ClientSize.Height / 50);
 				this.InvalidateLowQuality();
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 			else if (e.KeyCode == Keys.F)
 			{
@@ -923,7 +926,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				}
 			}
 		}
-		protected override void OnMouseEnter(EventArgs e)
+		protected override void OnMouseEnter(System.EventArgs e)
 		{
 			base.OnMouseEnter(e);
 			this.UpdateMouseoverState();
@@ -948,7 +951,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				}
 			}
 		}
-		protected override void OnMouseLeave(EventArgs e)
+		protected override void OnMouseLeave(System.EventArgs e)
 		{
 			base.OnMouseLeave(e);
 			this.UpdateMouseoverState();
@@ -958,7 +961,7 @@ namespace AdamsLair.WinForms.TimelineControls
 			if (this.VerticalScroll.Visible && this.VerticalScroll.Enabled)
 			{
 				base.OnMouseWheel(e);
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 			else
 			{
@@ -1441,13 +1444,13 @@ namespace AdamsLair.WinForms.TimelineControls
 			this.OnSelectionChanged(new TimelineViewSelectionEventArgs(this, this.SelectionBeginTime, this.SelectionEndTime, lastBegin, lastEnd));
 		}
 
-		private void track_HeightSettingsChanged(object sender, EventArgs e)
+		private void track_HeightSettingsChanged(object sender, System.EventArgs e)
 		{
-			this.OnContentHeightChanged(EventArgs.Empty);
+			this.OnContentHeightChanged(System.EventArgs.Empty);
 		}
-		private void track_ContentWidthChanged(object sender, EventArgs e)
+		private void track_ContentWidthChanged(object sender, System.EventArgs e)
 		{
-			this.OnContentWidthChanged(EventArgs.Empty);
+			this.OnContentWidthChanged(System.EventArgs.Empty);
 		}
 		private void model_TracksRemoved(object sender, TimelineTrackModelCollectionEventArgs e)
 		{
@@ -1457,18 +1460,18 @@ namespace AdamsLair.WinForms.TimelineControls
 		{
 			this.OnModelTracksAdded(e);
 		}
-		private void model_UnitChanged(object sender, EventArgs e)
+		private void model_UnitChanged(object sender, System.EventArgs e)
 		{
 			this.OnUnitChanged(e);
 		}
-		private void paintHqTimer_Tick(object sender, EventArgs e)
+		private void paintHqTimer_Tick(object sender, System.EventArgs e)
 		{
 			if (Control.MouseButtons != MouseButtons.None) return;
 			this.paintLowQuality = false;
 			this.Invalidate();
 			this.paintHqTimer.Enabled = false;
 		}
-		private void mouseActionTimer_Tick(object sender, EventArgs e)
+		private void mouseActionTimer_Tick(object sender, System.EventArgs e)
 		{
 			Point mousePos = this.PointToClient(Cursor.Position);
 			const float ScrollSpeed = 0.5f;
@@ -1487,7 +1490,7 @@ namespace AdamsLair.WinForms.TimelineControls
 				this.mouseScrollAcc.X -= quantizedMovement.X;
 				this.mouseScrollAcc.Y -= quantizedMovement.Y;
 
-				this.OnViewScrolled(EventArgs.Empty);
+				this.OnViewScrolled(System.EventArgs.Empty);
 			}
 		}
 

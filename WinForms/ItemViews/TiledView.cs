@@ -76,8 +76,8 @@ namespace AdamsLair.WinForms.ItemViews
 		public event EventHandler<TiledViewItemEventArgs> ItemEdited = null;
 		public event EventHandler<TiledViewItemAppearanceEventArgs> ItemAppearance = null;
 
-
-		public IListModel Model
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public IListModel Model
 		{
 			get { return this.model; }
 			set
@@ -174,7 +174,8 @@ namespace AdamsLair.WinForms.ItemViews
 		{
 			get { return this.editedItem.Item; }
 		}
-		public object HighlightModelItem
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public object HighlightModelItem
 		{
 			get { return this.hoverIndex != -1 ? this.model.GetItemAt(this.hoverIndex) : null; }
 			set
@@ -188,7 +189,8 @@ namespace AdamsLair.WinForms.ItemViews
 				}
 			}
 		}
-		public IEnumerable SelectedModelItems
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public IEnumerable SelectedModelItems
 		{
 			get { return this.selection.Select(i => i.Item); }
 			set
@@ -205,7 +207,8 @@ namespace AdamsLair.WinForms.ItemViews
 				this.OnSelectionChanged();
 			}
 		}
-		public string ModelItemEditProperty
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public string ModelItemEditProperty
 		{
 			get { return this.itemEditProperty; }
 			set { this.itemEditProperty = value; }
@@ -535,7 +538,7 @@ namespace AdamsLair.WinForms.ItemViews
 		/// </summary>
 		/// <param name="editor"></param>
 		protected virtual void DestroyItemEditor(ITiledViewItemEditor editor) {}
-		private void itemEditor_StopEditing(object sender, EventArgs e)
+		private void itemEditor_StopEditing(object sender, System.EventArgs e)
 		{
 			this.EndEdit(this.itemEditor.IsAcceptingValue);
 		}
@@ -677,7 +680,7 @@ namespace AdamsLair.WinForms.ItemViews
 		protected virtual void OnSelectionChanged()
 		{
 			if (this.SelectionChanged != null)
-				this.SelectionChanged(this, EventArgs.Empty);
+				this.SelectionChanged(this, System.EventArgs.Empty);
 			
 			if (this.selection.Count > 0)
 			{
@@ -721,34 +724,34 @@ namespace AdamsLair.WinForms.ItemViews
 				this.ItemEdited(this, e);
 		}
 		
-		protected override void OnForeColorChanged(EventArgs e)
+		protected override void OnForeColorChanged(System.EventArgs e)
 		{
 			base.OnForeColorChanged(e);
 			this.renderer.ColorText = this.ForeColor;
 		}
-		protected override void OnBackColorChanged(EventArgs e)
+		protected override void OnBackColorChanged(System.EventArgs e)
 		{
 			base.OnBackColorChanged(e);
 			this.renderer.ColorBackground = this.BackColor;
 		}
-		protected override void OnFontChanged(EventArgs e)
+		protected override void OnFontChanged(System.EventArgs e)
 		{
 			base.OnFontChanged(e);
 			this.renderer.FontRegular = this.Font;
 		}
-		protected override void OnSizeChanged(EventArgs e)
+		protected override void OnSizeChanged(System.EventArgs e)
 		{
 			base.OnSizeChanged(e);
 			this.UpdateContentStats();
 			this.Invalidate();
 		}
-		protected override void OnPaddingChanged(EventArgs e)
+		protected override void OnPaddingChanged(System.EventArgs e)
 		{
 			base.OnPaddingChanged(e);
 			this.UpdateContentStats();
 			this.Invalidate();
 		}
-		protected override void OnEnabledChanged(EventArgs e)
+		protected override void OnEnabledChanged(System.EventArgs e)
 		{
 			base.OnEnabledChanged(e);
 			this.Invalidate();
@@ -1027,7 +1030,7 @@ namespace AdamsLair.WinForms.ItemViews
 				this.OnItemDoubleClicked(new TiledViewItemMouseEventArgs(this, this.hoverIndex, this.model.GetItemAt(this.hoverIndex), new Point(e.X - itemPos.X, e.Y - itemPos.Y), e.Button));
 			}
 		}
-		protected override void OnMouseLeave(EventArgs e)
+		protected override void OnMouseLeave(System.EventArgs e)
 		{
 			base.OnMouseLeave(e);
 			this.InvalidateModelIndices(this.hoverIndex, 1);
@@ -1045,7 +1048,7 @@ namespace AdamsLair.WinForms.ItemViews
 		{
 			this.OnModelIndicesChanged(e);
 		}
-		private void model_CountChanged(object sender, EventArgs e)
+		private void model_CountChanged(object sender, System.EventArgs e)
 		{
 			this.OnModelCountChanged();
 		}

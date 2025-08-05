@@ -12,7 +12,7 @@ namespace AdamsLair.WinForms.ItemModels
 		object GetItemAt(int index);
 		int GetIndexOf(object item);
 
-		event EventHandler<EventArgs> CountChanged; 
+		event EventHandler<System.EventArgs> CountChanged; 
 		event EventHandler<ListModelItemsEventArgs> IndicesChanged;
 	}
 }

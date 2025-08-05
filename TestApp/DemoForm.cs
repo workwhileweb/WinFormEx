@@ -140,15 +140,17 @@ namespace AdamsLair.WinForms.TestApp
 			}
 			public DerivedList DerivedList { get; set; }
 			public DerivedDict DerivedDict { get; set; }
+			
 			public float ThrowOnGet
 			{
-				get { throw new NotImplementedException(); }
+				//get { throw new NotImplementedException(); }
 				set { }
 			}
+
 			public float ThrowOnSet
 			{
 				get { return 0.0f; }
-				set { throw new NotImplementedException(); }
+				//set { throw new NotImplementedException(); }
 			}
 		}
 		private struct Test2

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -19,8 +20,8 @@ namespace AdamsLair.WinForms.PropertyEditing.EditorTemplates
 			get { return this.hoveredIndex; }
 		}
 
-
-		public new IEnumerable<BitmaskItem> Items
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public new IEnumerable<BitmaskItem> Items
 		{
 			get { return base.Items.Cast<BitmaskItem>(); }
 			set
@@ -29,7 +30,8 @@ namespace AdamsLair.WinForms.PropertyEditing.EditorTemplates
 				base.Items.AddRange(value.ToArray());
 			}
 		}
-		public ulong BitmaskValue
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public ulong BitmaskValue
 		{
 			get
 			{

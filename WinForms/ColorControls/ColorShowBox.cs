@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Drawing.Drawing2D;
 
 using AdamsLair.WinForms.Drawing;
+using System.ComponentModel;
 
 namespace AdamsLair.WinForms.ColorControls
 {
@@ -30,17 +31,20 @@ namespace AdamsLair.WinForms.ColorControls
 				this.ClientRectangle.Width - 4,
 				this.ClientRectangle.Height - 4); }
 		}
-		public Color Color
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public Color Color
 		{
 			get { return this.upperColor; }
 			set { this.upperColor = this.lowerColor = value; this.Invalidate(); }
 		}
-		public Color UpperColor
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public Color UpperColor
 		{
 			get { return this.upperColor; }
 			set { this.upperColor = value; this.Invalidate(); }
 		}
-		public Color LowerColor
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public Color LowerColor
 		{
 			get { return this.lowerColor; }
 			set { this.lowerColor = value; this.Invalidate(); }

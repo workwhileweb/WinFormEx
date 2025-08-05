@@ -284,7 +284,7 @@ namespace AdamsLair.WinForms.ItemViews
 
 			if (modelItem.Checkable) e.Cancel = true;
 		}
-		private void viewMenuItem_CheckedChanged(object sender, EventArgs e)
+		private void viewMenuItem_CheckedChanged(object sender, System.EventArgs e)
 		{
 			ToolStripMenuItem viewItem = sender as ToolStripMenuItem;
 			if (viewItem == null) return;
@@ -295,7 +295,7 @@ namespace AdamsLair.WinForms.ItemViews
 				modelItem.Checked = viewItem.Checked;
 			}
 		}
-		private void viewMenuItem_Click(object sender, EventArgs e)
+		private void viewMenuItem_Click(object sender, System.EventArgs e)
 		{
 			ToolStripItem viewItem = sender as ToolStripItem;
 			if (viewItem == null) return;

@@ -10,7 +10,7 @@ namespace AdamsLair.WinForms.ItemModels
 	{
 		private List<T> items = new List<T>();
 
-		public event EventHandler<EventArgs> CountChanged;
+		public event EventHandler<System.EventArgs> CountChanged;
 		public event EventHandler<ListModelItemsEventArgs> IndicesChanged;
 
 		public int Count
@@ -125,7 +125,7 @@ namespace AdamsLair.WinForms.ItemModels
 		private void OnCountChanged()
 		{
 			if (this.CountChanged != null)
-				this.CountChanged(this, EventArgs.Empty);
+				this.CountChanged(this, System.EventArgs.Empty);
 		}
 		private void OnIndicesChanged(int index, int count)
 		{

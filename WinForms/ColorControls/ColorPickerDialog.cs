@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
 using AdamsLair.WinForms.Internal;
@@ -52,8 +53,8 @@ namespace AdamsLair.WinForms.ColorControls
 		private	bool			suspendTextEvents	= false;
 
 		public event EventHandler ColorEdited = null;
-
-		public bool AlphaEnabled
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public bool AlphaEnabled
 		{
 			get { return this.alphaEnabled; }
 			set 
@@ -63,17 +64,20 @@ namespace AdamsLair.WinForms.ColorControls
 				this.numAlpha.Enabled = this.alphaEnabled;
 			}
 		}
-		public Color OldColor
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public Color OldColor
 		{
 			get { return this.oldColor.ToColor(); }
 			set { this.oldColor = new InternalColor(value); this.UpdateColorShowBox(); }
 		}
-		public Color SelectedColor
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public Color SelectedColor
 		{
 			get { return this.selColor.ToColor(); }
 			set { this.selColor = new InternalColor(value); this.UpdateColorControls(); }
 		}
-		public PrimaryAttrib PrimaryAttribute
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public PrimaryAttrib PrimaryAttribute
 		{
 			get { return this.primAttrib; }
 			set { this.primAttrib = value; this.UpdateColorControls(); }

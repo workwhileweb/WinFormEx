@@ -218,8 +218,8 @@ namespace AdamsLair.WinForms.TimelineControls
 		protected internal virtual void OnPaintLeftSidebar(TimelineViewTrackPaintEventArgs e) {}
 		protected internal virtual void OnPaintRightSidebar(TimelineViewTrackPaintEventArgs e) {}
 		protected internal virtual void OnPaintOverlay(TimelineViewTrackPaintEventArgs e) {}
-		protected internal virtual void OnMouseEnter(EventArgs e) {}
-		protected internal virtual void OnMouseLeave(EventArgs e) {}
+		protected internal virtual void OnMouseEnter(System.EventArgs e) {}
+		protected internal virtual void OnMouseLeave(System.EventArgs e) {}
 		protected internal virtual void OnMouseMove(MouseEventArgs e) {}
 		protected internal virtual void OnCursorMove(TimelineViewCursorEventArgs e) { }
 		protected internal virtual void OnCursorEnter(TimelineViewCursorEventArgs e) { }
@@ -228,37 +228,37 @@ namespace AdamsLair.WinForms.TimelineControls
 		protected virtual void OnHeightSettingsChanged()
 		{
 			if (this.HeightSettingsChanged != null)
-				this.HeightSettingsChanged(this, EventArgs.Empty);
+				this.HeightSettingsChanged(this, System.EventArgs.Empty);
 		}
 		protected virtual void OnHeightChanged()
 		{
 			if (this.HeightChanged != null)
-				this.HeightChanged(this, EventArgs.Empty);
+				this.HeightChanged(this, System.EventArgs.Empty);
 		}
 		protected virtual void OnContentWidthChanged()
 		{
 			if (this.ContentWidthChanged != null)
-				this.ContentWidthChanged(this, EventArgs.Empty);
+				this.ContentWidthChanged(this, System.EventArgs.Empty);
 		}
 		protected virtual void OnViewportChanged() {}
 		
-		private void parentView_UnitChanged(object sender, EventArgs e)
+		private void parentView_UnitChanged(object sender, System.EventArgs e)
 		{
 			this.OnViewportChanged();
 		}
-		private void parentView_ViewScrolled(object sender, EventArgs e)
+		private void parentView_ViewScrolled(object sender, System.EventArgs e)
 		{
 			this.OnViewportChanged();
 		}
-		private void parentView_UnitZoomChanged(object sender, EventArgs e)
+		private void parentView_UnitZoomChanged(object sender, System.EventArgs e)
 		{
 			this.OnViewportChanged();
 		}
-		private void parentView_Resize(object sender, EventArgs e)
+		private void parentView_Resize(object sender, System.EventArgs e)
 		{
 			this.OnViewportChanged();
 		}
-		private void model_TrackNameChanged(object sender, EventArgs e)
+		private void model_TrackNameChanged(object sender, System.EventArgs e)
 		{
 			this.Invalidate();
 		}

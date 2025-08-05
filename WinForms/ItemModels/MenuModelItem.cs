@@ -314,7 +314,7 @@ namespace AdamsLair.WinForms.ItemModels
 		public void RaisePerformAction()
 		{
 			if (this.PerformAction != null)
-				this.PerformAction(this, EventArgs.Empty);
+				this.PerformAction(this, System.EventArgs.Empty);
 		}
 		private void RaiseItemsAdded(IEnumerable<IMenuModelItem> items)
 		{

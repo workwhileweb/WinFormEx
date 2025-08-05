@@ -8,6 +8,7 @@ using System.Reflection;
 
 using AdamsLair.WinForms.Drawing;
 using AdamsLair.WinForms.ItemModels;
+using System.ComponentModel;
 
 namespace AdamsLair.WinForms.ItemViews
 {
@@ -17,8 +18,8 @@ namespace AdamsLair.WinForms.ItemViews
 		private bool accepted = false;
 
 		public event EventHandler StopEditing = null;
-
-		public string EditedPropertyName
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        public string EditedPropertyName
 		{
 			get { return this.editedPropertyName; }
 			set { this.editedPropertyName = value; }
@@ -62,12 +63,12 @@ namespace AdamsLair.WinForms.ItemViews
 		private void Accept()
 		{
 			this.accepted = true;
-			if (this.StopEditing != null) this.StopEditing(this, EventArgs.Empty);
+			if (this.StopEditing != null) this.StopEditing(this, System.EventArgs.Empty);
 		}
 		private void Reject()
 		{
 			this.accepted = false;
-			if (this.StopEditing != null) this.StopEditing(this, EventArgs.Empty);
+			if (this.StopEditing != null) this.StopEditing(this, System.EventArgs.Empty);
 		}
 
 		protected override void OnKeyDown(KeyEventArgs e)
@@ -78,7 +79,7 @@ namespace AdamsLair.WinForms.ItemViews
 			else if (e.KeyCode == Keys.Return)
 				this.Accept();
 		}
-		protected override void OnLostFocus(EventArgs e)
+		protected override void OnLostFocus(System.EventArgs e)
 		{
 			base.OnLostFocus(e);
 			this.Accept();
